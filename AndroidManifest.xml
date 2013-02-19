@@ -1,0 +1,82 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gpsapilow"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Gps"
+            android:label="@string/title_activity_gps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.MainActivity" />
+        </activity>
+
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name=".HelloGoogleMaps"
+            android:label="@string/title_activity_hello_google_maps"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SelectRadius"
+            android:label="@string/title_activity_select_radius" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.HelloGoogleMaps" />
+        </activity>
+        <activity
+            android:name=".TargetReached"
+            android:label="@string/title_activity_target_reached" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.MainActivity" />
+        </activity>
+        <activity
+            android:name=".History"
+            android:label="@string/title_activity_history" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SavePoint"
+            android:label="@string/title_activity_save_point" 
+            android:noHistory="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.HelloGoogleMaps" />
+        </activity>
+        <activity
+            android:name=".SignalLost"
+            android:label="@string/title_activity_signal_lost" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gpsapilow.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

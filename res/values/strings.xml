@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="app_name">Location Alarm</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Location Alarm</string>
+    <string name="your_dest">podaj cel</string>
+    <string name="alarm_time">Ile czasu przed dotarciem powiadomic ?</string>
+    <string name="put_time">wpisz czas(w minutach)</string>
+    <string name="submit">zatwierdz</string>
+    <string name="title_activity_google_maps">GoogleMaps</string>
+    <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_hello_google_maps">HelloGoogleMaps</string>
+    <string name="maps_key">0H1HKLyER0iJ1d_fL2U0jHvtcnN7MQ1VIIV2XBw</string>
+    <string name="title_activity_select_radius">SelectRadius</string>
+
+    <color name="lightBlue">#1DB4B7</color>
+    <color name="red">#DB2929</color>
+
+    <string name="title_activity_target_reached">TargetReached</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_save_point">SavePoint</string>
+    <string name="title_activity_signal_lost">SignalLost</string>
+
+</resources>

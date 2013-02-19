@@ -1,0 +1,64 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/lightBlue" >
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="418dp"
+    android:background="@color/lightBlue" >
+
+    <TextView
+        android:id="@+id/didDestIsSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text=""
+        android:textColor="#DB2929" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="166dp"
+       android:layout_centerHorizontal="true"
+        android:onClick="moveTaskToBackground"
+        android:text="ok" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+        android:onClick="goToGoogleMaps"
+            android:layout_marginTop="66dp"
+        android:text="@string/your_dest" />
+
+    <Button
+        android:id="@+id/goToHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:onClick="goToHistory"
+        android:text="historia" />
+
+    <Button
+        android:id="@+id/turnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="76dp"
+        android:onClick="turnOff"
+        android:text="wylacz alarm" />
+
+</RelativeLayout>
+
+</ScrollView>

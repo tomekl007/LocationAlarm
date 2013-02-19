@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <com.google.android.maps.MapView 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:apiKey="0H1HKLyER0iJ1d_fL2U0jHvtcnN7MQ1VIIV2XBw"/>
+       <!--  android:apiKey= "0H1HKLyER0iKzUcH81Bi5-rmBgr9w-p9OD7I37Q"/>-->
+
+    
+    <Button android:id="@+id/googlemaps_select_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="wybierz"
+            android:onClick="saveCoords"/>
+
+    <Button
+        android:id="@+id/goToSavePoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="zapisz punkt"
+        android:onClick="goToSavePoint" />
+
+</RelativeLayout>
+
+<!--  <?xml version="1.0" encoding="utf-8"?>
+<com.google.android.maps.MapView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mapview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:apiKey="0H1HKLyER0iJ1d_fL2U0jHvtcnN7MQ1VIIV2XBw"
+    
+/>-->
