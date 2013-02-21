@@ -87,6 +87,7 @@ public class Gps extends Activity {
      	
      	SavePreferences("alarmConfirmed", "false");
      	
+     	Log.d("rectA","create rect dest with : " + destLng +" " + destLngt);
         ra = new RectArea(destLng,destLngt,radius);
         
         
@@ -103,6 +104,7 @@ public class Gps extends Activity {
 				String didUserConfirmed = LoadPreferences("alarmConfirmed");
 				 if(didUserConfirmed.equals("false")){
 				   timesOutFlag = true;
+				   Log.d("setAlarm","fromTimesOut");
 				   setAlarm(true);
 				  
 				 }
@@ -218,6 +220,8 @@ public class Gps extends Activity {
    
     }
   }
+    
+    boolean alarmSet=false;
     public void makeUseOfNewLocation(Location location){
 		   double lat =  location.getLatitude();
 		   System.out.println("lat = " + lat);
@@ -231,9 +235,15 @@ public class Gps extends Activity {
 		    String didUserConfirmed = LoadPreferences("alarmConfirmed");
 		    
 		    if(didUserConfirmed.equals("false")){
-		    if(ra.containts(lng, lat)){
+		    if(ra.containts(lng, lat) && alarmSet==false){
+		    	 Log.d("setAlarm","fromConatins");
 		    	setAlarm(true);
-		    }
+		    	alarmSet=true;
+		    }else if(didUserConfirmed.equals("true")){
+		    	bg.interrupt();
+		    	bg2.interrupt();
+		    	timer.cancel();
+		    	}
 		    }
 
 		    
@@ -264,6 +274,9 @@ public class Gps extends Activity {
     }
     
     
+    
+    Thread bg;
+    Thread bg2;
     //need to be checked on real devices
    //@TargetApi(9)
 public void setAlarm(boolean b){
@@ -306,7 +319,7 @@ RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         
         //in case that user dont press confirm
         
-        Thread bg  = new Thread(new Runnable() {
+          bg= new Thread(new Runnable() {
 			int interval = 1000;
 			public void run() {
 				for(int i = 0;i < 30; i++){ //30 seconds
@@ -325,7 +338,7 @@ RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         bg.start();
         
         //checking did user pressed confirm
-        Thread bg2  = new Thread(new Runnable() {
+       bg2  = new Thread(new Runnable() {
 			int interval = 1000;
 			String didUserConfirmed = "false";
 			public void run() {
@@ -334,7 +347,11 @@ RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
 					repeat = LoadPreferences("repeat");
 					if(didUserConfirmed.equals("true") && !repeat.equals("true")){
 						r.stop();
-					}else if(didUserConfirmed.equals("true") && repeat.equals("true")){
+						bg.interrupt(); 
+					   // Thread.currentThread().stop();
+					    timer.cancel();
+					    	
+						}else if(didUserConfirmed.equals("true") && repeat.equals("true")){
 						r.stop();
 						Log.d("if repeat"," true"); 
 						timer.start();

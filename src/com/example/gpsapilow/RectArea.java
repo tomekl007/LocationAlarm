@@ -1,4 +1,6 @@
 package com.example.gpsapilow;
+import android.util.Log;
+
 import com.example.gpsapilow.Point;
 
 
@@ -25,7 +27,7 @@ public class RectArea {
 		temp2 = lng+(0.5*radius*oneKm);
 		rb = new Point(temp1,temp2);
 		
-		temp1 = lat-(0.5*radius*oneKm);
+		temp1 = lat-(0.5*radius*oneKm);  
 		temp2 = lng-(0.5*radius*oneKm);
 		lb = new Point(temp1,temp2);
 		
@@ -39,13 +41,18 @@ public class RectArea {
 	
 
 	public boolean containts(double lng, double lat){
+		Log.d("rectA","get source " + lng + " " +  lat +  " to  " + this.toString());
+		
 		
 		if(lng >= lt.lng && lng <= rt.lng && lat >= lb.lat && lat <= rt.lat){
 		    System.out.println("containst return true");
-			return true;
+		    Log.d("rectA","ret TRue");
+		    return true;
+			
 		}
 		
 		System.out.println("containst return false");
+		Log.d("rectA","ret false");
 		return false;
 		
 		
